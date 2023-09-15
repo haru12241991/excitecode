@@ -1,1 +1,12 @@
 @use "global" as *;
+
+.test{
+  font-family: $font-family-ja;
+  font-weight: $bold;
+}
+.test2{
+  font-family: $font-family-en;
+}
+.test3{
+  font-family: $font-family-en2;
+}
