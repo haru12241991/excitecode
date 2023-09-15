@@ -1,0 +1,45 @@
+@use "global" as *;
+
+.tab{
+  margin-left: rem(-40);
+  margin-top: rem(-15);
+}
+
+.tab__menu{
+  font-size: rem(12);
+  color: $gray;
+  font-weight: $normal;
+  display: inline-block;
+  
+  margin-left: rem(40);
+  margin-top: rem(15);
+  
+  @include mq('md'){
+    font-size: rem(14);
+    display: block;
+  }
+}
+
+.tab__menu--current{
+  display: inline-flex;
+  align-items: center;
+
+  color: $black;
+
+  @include mq('md'){
+    display: flex;
+  }
+}
+
+.tab__menu--current::before{
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: $blue;
+  margin-right: rem(6);
+  
+  @include mq('md'){
+    width: 8px;
+    height: 8px;
+  }
+}
