@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.sns-items{
+  display: inline-flex;
+  align-items: center;
+}
+
+.sns-items__item{
+}
+
+.sns-items__item:not(:last-child){
+  margin-right: rem(20);
+}
+
+.sns-items__link{
+  
+}
+
+.sns-items__icon{
+  font-size: rem(22);
+  color: $white;
+}
+

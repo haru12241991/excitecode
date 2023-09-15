@@ -39,8 +39,36 @@
     <script defer src="./assets/js/script.js"></script>
   </head>
   <body>
-    <header>
-      
+    <header class="header">
+      <div class="header__icon icon">
+        <img src="assets/images/common/logo-light.png" alt="ロゴ">
+      </div>
+      <button class="header__btn js-hamburger u-mobile">
+        <span class="header__btn-line"></span>
+        <span class="header__btn-line"></span>
+        <span class="header__btn-line"></span>
+      </button>
+      <div class="header__content">
+        <div class="header__icon header__icon--deep icon">
+          <img src="assets/images/common/logo-deep.png" alt="ロゴ">
+        </div>
+        <nav class="header__nav">
+          <ul class="header__nav-items">
+              <li class="header__nav-item"><a href="#top">top</a></li>
+              <li class="header__nav-item"><a href="#about">about</a></li>
+              <li class="header__nav-item"><a href="#service">service</a></li>
+              <li class="header__nav-item"><a href="#works">works</a></li>
+              <li class="header__nav-item"><a href="#news">news</a></li>
+              <li class="header__nav-item"><a href="#contact">contact</a></li>
+              <li class="header__nav-item u-mobile"><a href="#contact">プライバシーポリシー</a></li>
+          </ul>
+          <ul class="header__sns-items sns-items">
+            <li class="sns-items__item"><a href="" class="sns-items__link"><i class="fa-brands fa-facebook sns-items__icon"></i></a></li>
+            <li class="sns-items__item"><a href="" class="sns-items__link"><i class="fa-brands fa-twitter sns-items__icon"></i></a></li>
+            <li class="sns-items__item"><a href="" class="sns-items__link"><i class="fa-brands fa-instagram sns-items__icon"></i></a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <div class="inner">

@@ -23,12 +23,12 @@
 }
 
 .large-btn__icon{
-  width: rem(16); 
+  font-size: rem(16); 
   margin-right: 10px;
   margin-top: 2px;
 
   @include mq('md'){
-    width: rem(22);
+    font-size: rem(22);
     margin-right: 16px;
     margin-top: 4px;
   }
