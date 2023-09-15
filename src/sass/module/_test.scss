@@ -14,3 +14,14 @@
 .test4{
   width: 235px;
 }
+
+.test5{
+  display: grid;
+  grid-template-columns: 1fr; /* スマホ表示では1列 */
+  gap: rem(50); /* 各アイテム間の間隔を16pxに設定 */
+  
+  @include mq('md'){
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: rem(18); /* 各アイテム間の間隔を16pxに設定 */
+  }
+}
