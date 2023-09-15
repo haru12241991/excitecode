@@ -1,0 +1,13 @@
+@use "global" as *;
+
+.label{
+  font-size: rem(10);
+  display: inline-block;
+  padding: 5px 15px;
+  min-width: rem(80);
+  background-color: $white;
+}
+
+.label--gray{
+  background-color: $light-gray2;
+}
