@@ -1,0 +1,70 @@
+@use "global" as *;
+
+.simple-card {
+  display: block;
+  padding-bottom: rem(20);
+  border-bottom: 1px solid $light-gray3;
+  
+  @include mq('md'){
+    padding-bottom: rem(30);
+  }
+}
+
+.simple-card__header {
+  display: flex;
+  align-items: center;
+}
+
+.simple-card__left {
+  display: flex;
+  align-items: center;
+}
+
+.simple-card__date {
+}
+
+.simple-card__right {
+  margin-left: rem(12);
+  
+  @include mq('md'){
+    margin-left: rem(28);
+  }
+}
+
+.simple-card__labels {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: rem(-6);
+  margin-top: rem(-6);
+  
+  @include mq('md'){
+    margin-left: rem(-20);
+    margin-top: rem(-20);
+    
+  }
+}
+
+.simple-card__label {
+  margin-left: rem(6);
+  margin-top: rem(6);
+  
+  @include mq('md'){
+    margin-left: rem(20);
+    margin-top: rem(20);
+  }
+}
+
+.simple-card__content {
+  margin-top: rem(20);
+}
+
+.simple-card__title {
+  color: $black;
+  font-size: rem(14);
+  font-weight: $normal;
+  line-height: 200%;
+
+  @include mq("md") {
+    font-size: rem(16);
+  }
+}

@@ -34,3 +34,12 @@
     width: 1020px;
   }
 }
+
+.test7{
+  width: 295px;
+  margin: 0 auto;
+
+  @include mq('md'){
+    width: 776px;
+  }
+}
