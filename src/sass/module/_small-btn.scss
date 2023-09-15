@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.small-btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  font-size: rem(14);
+  color: $blue;
+  font-family: $font-family-en2;
+  font-weight: $normal;
+  line-height: normal;
+
+  border: 1px solid $blue;
+  border-radius: 4px;
+  width: 100%;
+  padding: rem(14);
+}
+
+.small-btn::after {
+  content: "";
+  background: url(..//images/common/arrow-icon.png) no-repeat center
+  center/cover;
+  width: 5px; /* 例: 50px; */
+  height: 9px; /* 例: 50px; */
+  margin-left: 10px;
+  margin-top: -1px;
+}

@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.lage-btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  font-size: rem(16);
+  color: $blue;
+  font-family: $font-family-ja;
+  font-weight: $regular;
+  line-height: normal;
+
+  border: 1px solid $blue;
+  border-radius: 7px;
+  width: 100%;
+  padding: rem(18);
+  
+  @include mq('md'){
+    font-size: rem(22);
+  }
+}
+
+.lage-btn__icon{
+  width: rem(16); 
+  margin-right: 10px;
+  margin-top: 2px;
+
+  @include mq('md'){
+    width: rem(22);
+    margin-right: 16px;
+    margin-top: 4px;
+  }
+}
