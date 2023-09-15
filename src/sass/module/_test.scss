@@ -25,3 +25,12 @@
     gap: rem(18); /* 各アイテム間の間隔を16pxに設定 */
   }
 }
+
+.test6{
+  width: 295px;
+  margin: 0 auto;
+
+  @include mq('md'){
+    width: 1020px;
+  }
+}

@@ -17,7 +17,11 @@
 .medium-card__img:before {
   content: "";
   display: block;
-  padding-top: 56.25%;
+  padding-top: 50.746269%;
+
+  @include mq('md'){
+    padding-top: 47.746269%;
+  }
 }
 
 .medium-card__img img {
@@ -55,7 +59,7 @@
   font-size: rem(26);
   font-weight: $bold;
   line-height: 100%;
-  margin-top: rem(10);
+  margin-top: rem(19);
 }
 
 .medium-card__content {
@@ -67,11 +71,11 @@
   font-size: rem(14);
   font-style: normal;
   font-weight: $regular;
-  line-height: 228.571%; /* 228.571% */
+  line-height: 236.571%; /* 228.571% */
   
   @include mq("md") {
     font-size: rem(16);
-    width: 95%;
+    width: 94%;
   }
 }
 

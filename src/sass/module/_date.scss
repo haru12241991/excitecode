@@ -1,0 +1,12 @@
+@use "global" as *;
+
+.date{
+  font-weight: $bold;
+  font-size: rem(10);
+  line-height: 100%;
+  color: $gray;
+  
+  @include mq('md'){
+    font-size: rem(12);
+  }
+}

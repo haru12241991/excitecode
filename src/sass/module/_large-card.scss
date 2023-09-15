@@ -1,0 +1,103 @@
+@use "global" as *;
+
+.large-card {
+  display: flex;
+}
+
+.large-card__left {
+  width: 40.6779661%;
+  margin-right: rem(18);
+  
+  @include mq("md") {
+    width: 28.4313725%;
+    margin-right: rem(18);
+    margin-right: rem(50);
+  }
+}
+
+.large-card__img{
+position: relative;
+width: 100%;
+}
+.large-card__img:before {
+content:"";
+display: block;
+padding-top: 76%; /* 高さと幅の比を16:9に固定。9/16*100=56.25 */
+
+@include mq('md'){
+  padding-top: 79%; /* 高さと幅の比を16:9に固定。9/16*100=56.25 */
+}
+}
+.large-card__img img{
+position: absolute;
+height: 100%;
+width: 100%;
+object-fit: cover;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+}
+
+.large-card__right {
+  width: 53.220339%;
+
+  @include mq("md") {
+    width: 66.6666667%;
+  }
+}
+
+.large-card__labels {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: rem(-12);
+  margin-top: rem(-12);
+}
+
+.large-card__label {
+  margin-left: rem(12);
+  margin-top: rem(12);
+}
+
+.large-card__content{
+  margin-top: rem(17);
+
+  @include mq('md'){
+    margin-top: rem(22);
+  }
+}
+
+.large-card__title {
+  color: $black;
+  font-size: rem(14);
+  font-weight: $normal;
+  line-height: 200%;
+
+  @include mq("md") {
+    font-size: rem(24);
+  }
+}
+
+.large-card__text {
+  display: none;
+  @include mq("md") {
+    display: block;
+    color: $deep-gray;
+    font-size: rem(16);
+    font-weight: $regular;
+    line-height:  237.5%; /* 237.5% */
+
+    margin-top: rem(22);
+  }
+}
+
+.large-card__footer {
+  margin-top: rem(4);
+
+  @include mq('md'){
+    margin-top: rem(12);
+  }
+}
+
+.large-card__date {
+}

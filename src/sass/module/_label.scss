@@ -2,12 +2,17 @@
 
 .label{
   font-size: rem(10);
+  font-weight: $normal;
   display: inline-block;
-  padding: 5px 15px;
+  padding: 3px 15px;
   min-width: rem(80);
   background-color: $white;
+  
+  @include mq('md'){
+    padding: 4px 20px;
+  }
 }
 
 .label--gray{
-  background-color: $light-gray2;
+  background-color: red;
 }
