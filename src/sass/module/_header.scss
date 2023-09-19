@@ -1,56 +1,152 @@
 @use "global" as *;
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  
+  width: 100%;
+  height: rem(80);
+  
+  @include mq("md") {
+    height: rem(82);
+  }
+}
+
+.header__content {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  height: inherit;
 }
 
 .header__icon {
-  /* position: fixed;
-  z-index: 100;
+  position: absolute;
   top: 0;
   left: 0;
-
-  width: rem(114); */
 }
 
-.header__icon--deep{
-  width: rem(114);
+.header__icon--deep {
 }
 
 /* ハンバーガーボタン */
-
-
 .header__btn {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  transition: all 0.4s;
+
+  width: 25px;
+  height: 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  outline: none;
 }
 
 .header__btn-line {
+  width: 25px;
+  height: 1px;
+  background-color: $black;
+  display: block;
+}
+
+.header__btn-line:last-child {
+  width: 17px;
+}
+
+/* ❌マークのスタイル */
+.header__btn.active {
+  width: 22px;
+  height: 22px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.header__btn.active .header__btn-line {
+  background-color: $white;
+}
+
+.header__btn.active .header__btn-line:nth-child(1) {
+  transform: rotate(45deg) translateY(1.5px);
+  width: 22px;
+}
+
+.header__btn.active .header__btn-line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__btn.active .header__btn-line:nth-child(3) {
+  transform: rotate(-45deg) translateY(-1.5px);
+  width: 22px;
 }
 
 /* ナビゲーション */
-.header__content {
-  position: fixed;
-  overflow-y: scroll;
-  z-index: 99;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: $navy;
-}
 
 .header__nav {
+  opacity: 0; 
+  position: fixed;
+  overflow-y: scroll;
+  top: rem(80);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
   width: 73.3333333%;
-  margin: 0 auto;
-  padding: rem(80) 0 rem(149) 0;
+  padding: rem(80) 0 rem(149);
+  height: 100%;
+  
+  @include mq("md") {
+    opacity: 1;
+    overflow-y: visible;/* 初期値に戻す */
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: inherit;
+    width: 100%;
+    padding: 0;
+    z-index: 101;
+  }
 }
 
 .header__nav-items {
+  @include mq('md'){
+    text-align: right;
+    height: inherit;
+  }
 }
 
 .header__nav-item {
   border-bottom: 1px solid $deep-blue;
+
+  @include mq("md") {
+    border-bottom: none;
+    display: inline-block;
+    height: inherit;
+  }
 }
 .header__nav-item:first-child {
   border-top: 1px solid $deep-blue;
+
+  @include mq("md") {
+    border-top: none;
+  }
+}
+
+.header__nav-item:last-child {
+  @include mq("md") {
+    display: none;
+  }
 }
 
 .header__nav-item a {
@@ -60,6 +156,15 @@
   font-weight: $regular;
   display: block;
   padding: rem(12) 0;
+  
+  @include mq("md") {
+    color: $black;
+    font-weight: $normal;
+    display: inline-flex;
+    align-items: center;
+    height: inherit;
+    padding: 0 rem(25);
+  }
 }
 
 .header__nav-item a:last-child {
@@ -68,4 +173,60 @@
 
 .header__sns-items {
   margin-top: rem(50);
+}
+
+#g-nav.panelactive #g-nav-list {
+  display: block; 
+}
+
+/*背景が出現後にナビゲーションを表示*/
+.header__nav.panelactive{
+  opacity: 1;
+}
+ 
+/* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
+.header__nav.panelactive{
+  animation-name: gnaviAnime;
+  animation-duration: 1s;
+  animation-delay: 0.2s; 
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes gnaviAnime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} 
+
+/* 背景 */
+.header__background{
+  position: fixed;
+  z-index: 3;
+
+  transform: scale(0); 
+  right: -50px;
+  bottom: -50px;
+  transition: all 0.6s; 
+
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: $navy;
+
+  @include mq('md'){
+    height: rem(80);
+    background: $white;
+    top: 0;
+    left: 0;
+    transform: none; 
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+.header__background.circleactive {
+  transform: scale(50); 
 }

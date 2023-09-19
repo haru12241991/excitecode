@@ -1,0 +1,14 @@
+@use "global" as *;
+
+.icon{
+  display: inline-block;
+  width: rem(114);
+
+  @include mq('md'){
+    width: rem(258);
+  };
+}
+
+.icon img{
+  width: 100%;
+}
